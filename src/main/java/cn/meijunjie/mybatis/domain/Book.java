@@ -1,25 +1,35 @@
 package cn.meijunjie.mybatis.domain;
 
-public class Book {
+public class Book 
+{
 	
+	private Integer bookid;
 	private String name;
-	private String description;
+	private Integer number;
+	public Integer getBookid() {
+		return bookid;
+	}
+	public void setBookid(Integer bookid) {
+		this.bookid = bookid;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescription() {
-		return description;
+	public Integer getNumber() {
+		return number;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setNumber(Integer number) {
+		this.number = number;
 	}
 	@Override
 	public String toString() {
-		return "Book [name=" + name + ", description=" + description + "]";
+		return "Book [bookid=" + bookid + ", name=" + name + ", number=" + number + "]";
 	}
+	
+	
 	
 	
 }
