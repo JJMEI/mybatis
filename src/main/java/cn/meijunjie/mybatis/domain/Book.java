@@ -3,14 +3,14 @@ package cn.meijunjie.mybatis.domain;
 public class Book 
 {
 	
-	private Integer bookid;
+	private Integer book_id;
 	private String name;
 	private Integer number;
-	public Integer getBookid() {
-		return bookid;
+	public Integer getbook_id() {
+		return book_id;
 	}
-	public void setBookid(Integer bookid) {
-		this.bookid = bookid;
+	public void setbook_id(Integer book_id) {
+		this.book_id = book_id;
 	}
 	public String getName() {
 		return name;
@@ -26,7 +26,7 @@ public class Book
 	}
 	@Override
 	public String toString() {
-		return "Book [bookid=" + bookid + ", name=" + name + ", number=" + number + "]";
+		return "Book [book_id=" + book_id + ", name=" + name + ", number=" + number + "]";
 	}
 	
 	
