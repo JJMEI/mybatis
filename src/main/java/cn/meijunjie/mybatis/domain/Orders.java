@@ -1,6 +1,7 @@
 package cn.meijunjie.mybatis.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Orders {
 	private int id;
@@ -8,6 +9,27 @@ public class Orders {
 	private String number;
 	private Date createtime;
 	private String note;
+	
+	//在订单表中添加User属性进行关联
+	private User user;
+	
+	//订单明细
+	private List<OrderDetail> orderDetails;
+	
+	
+	
+	public List<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+	public void setOrderDetails(List<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public int getId() {
 		return id;
 	}
@@ -41,7 +63,7 @@ public class Orders {
 	@Override
 	public String toString() {
 		return "Orders [id=" + id + ", user_id=" + user_id + ", number=" + number + ", createtime=" + createtime
-				+ ", note=" + note + "]";
+				+ ", note=" + note + ", user=" + user + ", orderDetails=" + orderDetails + "]";
 	}
 	
 	

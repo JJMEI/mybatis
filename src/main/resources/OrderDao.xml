@@ -20,5 +20,73 @@
 				orders.user_id = user_id
 	
 	</select>
+	
+	
+	<!-- 将订单查询关联用户的ResultMap
+		 将整个查询结果映射到Orders中
+	 -->
+	<resultMap type="cn.meijunjie.mybatis.domain.Orders" id="OrderUserResultMap">
+		<!-- 配置映射的订单信息
+			 id 指定查询列中唯一指定的标识，
+			 result 将其他的列映射到pojo中的属性上
+		 -->
+		<id column="id" property="id"/>
+		<result column="user_id" property="user_id"/>
+		<result column="number" property="number"/>
+		<result column="createtime" property="createtime"/>
+		<result column="note" property="note"/>
+		<!--  -->
+		<association property="user" javaType="User">
+			<id column="id" property="id"/>
+			<result column="username" property="username"/>
+			<result column="sex" property="sex"/>
+			<result column="address" property="address"/>
+		</association>
+	</resultMap>
+	
+	<select id="findOrdersUserResultMap" resultMap="OrderUserResultMap">
+	
+		select 
+				orders.*,
+				user.username,
+				user.sex,
+				user.address
+		from
+				orders,user
+		where
+				orders.user_id = user_id
+	
+	</select>
+	
+	
+	<resultMap type="cn.meijunjie.mybatis.domain.Orders" id="OrdersAndOrderDetail" extends="OrderUserResultMap">
+	
+	
+		<!-- mybatis 使用ResultMap的collection属性对关联查询的多条记录映射到一个list集合属性中 -->
+		<collection property="orderDetails" ofType="cn.meijunjie.mybatis.domain.OrderDetail">
+			<id column="orderdetail_id" property="id"/>
+			<result column="items_id" property="items_id"/>	
+			<result column="items_num" property="items_num"/>
+			<result column="orders_id" property="orders_id"/> 		
+		</collection>
+	</resultMap>
+	
+	<select id="findOrdersUserAndOrderDetailResultMap" resultMap="OrdersAndOrderDetail">
+		
+		
+		select 
+				orders.*,
+				user.username,
+				user.sex,
+				user.address,
+				orderdetail.items_id,
+				orderdetail.items_num,
+				orderdetail.orders_id
+		from
+				orders,user,orderdetail
+		where
+				orders.user_id = user_id and orderdetail.orders_id=orders.id
+	
+	</select>
 
 </mapper>

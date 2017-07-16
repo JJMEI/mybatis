@@ -71,4 +71,16 @@ public class TestSpringMybatis {
 	{
 		System.out.println(orderDao.findOrdersUser());
 	}
+	
+	@org.junit.Test
+	public void testFindOrdersUserResultMap() throws Exception
+	{
+		System.out.println(orderDao.findOrdersUserResultMap());
+	}
+	
+	@org.junit.Test
+	public void testFindOrderUserAndOrderDetails() throws Exception
+	{
+		System.out.println(orderDao.findOrdersUserAndOrderDetailResultMap());
+	}
 }
