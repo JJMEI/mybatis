@@ -12,14 +12,12 @@
   </select>
   
   <insert id="insertBook" parameterType="cn.meijunjie.mybatis.domain.Book" >
-  	<selectKey keyProperty="bookId" resultType="int" order="AFTER">
+  	<!-- <selectKey keyProperty="bookId" resultType="int" order="AFTER">
   		select last_insert_id()
-  	</selectKey>
+  	</selectKey> -->
   	
-  	insert into book(book_id,name,number) values(#{book_id},#{name},#{number})
+  	insert into book(name,number) values(#{name},#{number})
   </insert>
-  <!-- 
-  <update id=""></update>
-  <delete id=""></delete>
-  <insert id=""></insert> -->
+  
+  
 </mapper>

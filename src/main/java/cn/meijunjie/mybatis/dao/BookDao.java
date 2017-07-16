@@ -7,7 +7,7 @@ import cn.meijunjie.mybatis.domain.Book;
 
 @Repository
 public interface BookDao {
-//	@Select("select * from book where book_id=#{bookid}")
+	//@Select("select * from book where book_id=#{bookid}")
 	Book selectBookById(long bookId);
 	
 	void insertBook(Book book);

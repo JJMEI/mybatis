@@ -1,0 +1,25 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.meijunjie.mybatis.dao.UserDao">
+
+	<!-- #{} 表示一个占位符 ${} 表示一个拼接符，它会引起sql注入的风险 -->
+
+	<select id="findUserList" parameterType="cn.meijunjie.mybatis.querypo.UserQueryVo"
+		resultType="cn.meijunjie.mybatis.domain.User">
+		select * from user
+		<where>
+			<if test="user!=null">
+				<if test="user.sex!=null and user.sex!=''">
+					and user.sex=#{user.sex}
+				</if>
+				<if test="user.address!=null and user.address!=''">
+					and user.address like '%${user.address}%'
+				</if>
+			</if>
+
+		</where>
+
+	</select>
+
+</mapper>
