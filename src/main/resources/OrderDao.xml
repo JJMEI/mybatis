@@ -88,5 +88,28 @@
 				orders.user_id = user_id and orderdetail.orders_id=orders.id
 	
 	</select>
-
+	
+	
+	<!-- <select id="findUserAndItemsResultMap" resultMap="">
+		
+		select 
+				orders.*,
+				user.username,
+				user.sex,
+				user.address,
+				orderdetail.items_id,
+				orderdetail.items_num,
+				orderdetail.orders_id,
+				items.name,
+				items.detail,
+				items.price
+		from
+				orders,user,orderdetail,items
+		where
+				orders.user_id = user_id and orderdetail.orders_id=orders.id and orderdetail.items_id=items.id
+		
+	
+	
+	
+	</select> -->
 </mapper>

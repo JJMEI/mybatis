@@ -1,40 +1,57 @@
 package cn.meijunjie.mybatis.domain;
 
+import java.util.Date;
+
 public class Items {
 	
 	private Integer id;
-	private Integer orders_id;
-	private Integer items_id;
-	private Integer items_num;
+	private String name;
+	private Float price;
+	private String detail;
+	private String pic;
+	private Date createtime;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getOrders_id() {
-		return orders_id;
+	public String getName() {
+		return name;
 	}
-	public void setOrders_id(Integer orders_id) {
-		this.orders_id = orders_id;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public Integer getItems_id() {
-		return items_id;
+	public Float getPrice() {
+		return price;
 	}
-	public void setItems_id(Integer items_id) {
-		this.items_id = items_id;
+	public void setPrice(Float price) {
+		this.price = price;
 	}
-	public Integer getItems_num() {
-		return items_num;
+	public String getDetail() {
+		return detail;
 	}
-	public void setItems_num(Integer items_num) {
-		this.items_num = items_num;
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+	public String getPic() {
+		return pic;
+	}
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
+	public Date getCreatetime() {
+		return createtime;
+	}
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
 	}
 	@Override
 	public String toString() {
-		return "Items [id=" + id + ", orders_id=" + orders_id + ", items_id=" + items_id + ", items_num=" + items_num
-				+ "]";
+		return "Items [id=" + id + ", name=" + name + ", price=" + price + ", detail=" + detail + ", pic=" + pic
+				+ ", createtime=" + createtime + "]";
 	}
+	
 	
 	
 }
