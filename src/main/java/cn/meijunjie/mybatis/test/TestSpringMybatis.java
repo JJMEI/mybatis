@@ -3,11 +3,13 @@ package cn.meijunjie.mybatis.test;
 
 
 
+import org.apache.taglibs.standard.lang.jstl.test.beans.PublicInterface2;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import cn.meijunjie.mybatis.dao.OrderDao;
 import cn.meijunjie.mybatis.dao.UserDao;
 import cn.meijunjie.mybatis.domain.User;
 import cn.meijunjie.mybatis.querypo.UserQueryVo;
@@ -36,6 +38,9 @@ public class TestSpringMybatis {
 	@Autowired
 	private UserDao userDao;
 	
+	@Autowired
+	private OrderDao orderDao;
+	
 	@org.junit.Test
 	public void testFindUserById()
 	{
@@ -61,4 +66,9 @@ public class TestSpringMybatis {
 		System.out.println(userDao.findUserByParam("1", "北京市"));
 	}
 	
+	@org.junit.Test
+	public void testFindOrdersUser() throws Exception
+	{
+		System.out.println(orderDao.findOrdersUser());
+	}
 }
