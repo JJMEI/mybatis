@@ -21,20 +21,7 @@ import cn.meijunjie.mybatis.querypo.UserQueryVo;
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})
 public class TestSpringMybatis {
 
-//	@Autowired
-//	private BookDao bookDao;
-	
-//	@Test
-//	public void testBook()
-//	{
-//		Book book = new Book();
-//		book.setName("jdk源码剖析");
-//		book.setNumber(100);
-//		//bookDao.insertBook(book);
-//		System.out.println(bookDao.selectBookById(1000));
-//	}
-	
-	
+
 	@Autowired
 	private UserDao userDao;
 	
